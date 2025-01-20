@@ -32,7 +32,6 @@ Continuous physiological measurements
 Trial data (6 participants) with labeled medication states
 Observational data (9 participants) from regular school days
 
-# Methodology
 # Data Processing
 
 Time-series to graph conversion
