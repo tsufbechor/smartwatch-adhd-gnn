@@ -1,57 +1,67 @@
-# smartwatch-adhd-gnn
-A Graph Neural Network approach for analyzing smartwatch-based physiological data to predict methylphenidate intake effects in children with ADHD. This research combines wearable technology data with advanced deep learning techniques to understand medication responses through physiological biomarkers
-# Overview
-This project applies Graph Neural Networks (GNNs) to analyze physiological data collected from smartwatches worn by children with ADHD. The goal is to predict and understand methylphenidate intake effects using various physiological parameters including heart rate variability, movement levels, and sympathetic nervous system arousal.
-# Research Context
+# Applying Graph Neural Networks on Smartwatch-Based Physiological Data for ADHD Medication Insights
 
-Study focused on 15 children with ADHD (ages 6-16, mean age 11.10 ± 2.69)
-Data collected through smartwatch sensors during medication administration
-Collaboration with Iluria Ltd., a digital health software startup
+This project leverages **Graph Neural Networks (GNNs)** to analyze physiological data collected from smartwatches to assess the effects of methylphenidate intake in children with ADHD. The study explores the application of GNNs to enhance the interpretation of time-series physiological data, aiming to improve predictions and insights into medication effectiveness.
 
-# Key Features
+## Overview
 
-Processing of multimodal smartwatch sensor data (accelerometer, heart rate, gyroscope)
-Graph Neural Network implementation for time-series physiological data
-Two experimental approaches:
+### Objective
+The primary goal is to:
+1. Assess the ability of GNNs to predict medication effects using trial data.
+2. Examine if insights gained from trial data can be applied to observational datasets.
 
-Leave-one-out cross-validation on trial data
-Transfer learning from trial data to observational data
+### Key Features
+- **Physiological Monitoring:** Collects heart rate variability, motion levels, and autonomic nervous system metrics using advanced smartwatches.
+- **Graph Neural Networks:** Structures time-series data into graph-based formats for enhanced analysis and predictions.
+- **Predictive Modeling:** Utilizes Random Forest and Linear Discriminant Analysis (LDA) for evaluating GNN-augmented data.
 
+## Methodology
 
+1. **Data Collection:**
+   - Participants: 15 children aged 6–16 with ADHD.
+   - Devices: Smartwatches capturing physiological metrics such as heart rate, accelerometer, and gyroscope data.
+   - Data Sources: 
+     - Trial Data: Labeled data with medication intake records.
+     - Observational Data: Unlabeled daily school observations.
 
-# Data Collection
-Sensor Data
+2. **Graph Construction:**
+   - Time-series data converted into graph structures with nodes representing data points and edges denoting sequential connections.
+   - GNN layers: Graph Attention Convolution (GAT) layers with dropout and ReLU activation.
 
-Accelerometer (x, y, z)
-Heart rate monitoring
-Gyroscope (x, y, z)
-Continuous physiological measurements
+3. **Experiments:**
+   - **Experiment 1:** Leave-one-out cross-validation within trial data to test GNN’s prediction performance.
+   - **Experiment 2:** Generalize trial-derived insights to observational data.
 
-# Data Types
+## Results
 
-Trial data (6 participants) with labeled medication states
-Observational data (9 participants) from regular school days
+- **Trial Data:** Significant improvement in prediction accuracy using GNN, with better separation of activity states in 4 out of 6 participants.
+- **Observational Data:** Limited success in applying trial insights to observational datasets.
 
-# Data Processing
+## Findings and Challenges
 
-Time-series to graph conversion
-Feature extraction for GNN nodes
-Temporal edge creation
+- **Key Insights:**
+  - GNNs effectively enhance the interpretation of trial data.
+  - Physiological changes during medication intake can be better captured using graph-based methods.
+- **Challenges:**
+  - Difficulty in generalizing insights from trial data to observational datasets.
+  - Limited sample size affects model robustness.
 
-# Model Architecture
+## Future Directions
 
-Three-layer GNN with Graph Attention Convolution (GAT)
-Dropout regularization
-RELU activation functions
+1. Expand dataset size for improved generalizability.
+2. Explore advanced pre-processing techniques for better alignment of trial and observational data.
+3. Incorporate additional contextual data, such as environmental or behavioral factors.
+4. Evaluate alternative GNN architectures and machine learning models.
 
-# Evaluation Methods
+## Getting Started
 
-Random Forest prediction with AUC curve analysis
-Linear Discriminant Analysis (LDA) for activity state separation
-Weekly consolidated confidence graphs
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/roeiAv/Applying-Graph-Neural-Networks-on-Smart-watch-based-data-of-physiological-parameters.git
+   cd Applying-Graph-Neural-Networks-on-Smart-watch-based-data-of-physiological-parameters
+2. **Install Dependencies:**
+  pip install -r requirements.txt
 
-# Results
+3. **Run the Analysis:** Use the provided scripts to preprocess data, construct graphs, train models, and evaluate results.
 
-Improved prediction performance in trial data analysis
-Enhanced separation of activity states in 4/6 participants
-Limited success in generalizing to observational data
+4. **Citation:** Bechor, T., Asulin, U., Kehat, Y., Avraham, R. (2024). Applying Graph Neural Networks on Smartwatch-Based Physiological Data for ADHD Medication Insights.
+
